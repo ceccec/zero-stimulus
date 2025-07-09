@@ -1,0 +1,24 @@
+{
+  "name": "zero-stimulus-pwa",
+  "version": "1.0.0",
+  "description": "A Progressive Web App for creating zero-stimulus environments",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 4173"
+  },
+  "keywords": ["pwa", "zero-stimulus", "focus", "productivity"],
+  "author": "ceccec",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-pwa": "^0.17.0",
+    "@vitejs/plugin-react": "^4.2.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+} 
