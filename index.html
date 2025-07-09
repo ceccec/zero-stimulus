@@ -4,12 +4,132 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="A zero-stimulus environment for focus and productivity" />
-    <title>Zero Stimulus</title>
+    <meta name="description" content="A Progressive Web App for creating zero-stimulus environments" />
+    <meta name="theme-color" content="#ffffff" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+    
+    <title>Zero-Stimulus PWA</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body data-controller="environment" data-environment-target="body">
+    <div id="app">
+      <header class="app-header">
+        <h1>Zero-Stimulus</h1>
+        <p>Create your perfect focus environment</p>
+      </header>
+
+      <main class="app-main">
+        <!-- Focus Timer Section -->
+        <section class="timer-section" data-controller="focus-timer">
+          <div class="timer-container">
+            <div class="timer-display" data-focus-timer-target="display">25:00</div>
+            
+            <div class="timer-progress-container">
+              <div class="timer-progress" data-focus-timer-target="progress"></div>
+            </div>
+            
+            <div class="timer-controls">
+              <button 
+                class="btn btn-primary" 
+                data-focus-timer-target="startButton"
+                data-action="click->focus-timer#start">
+                Start Focus
+              </button>
+              
+              <button 
+                class="btn btn-secondary hidden" 
+                data-focus-timer-target="pauseButton"
+                data-action="click->focus-timer#pause">
+                Pause
+              </button>
+              
+              <button 
+                class="btn btn-outline" 
+                data-focus-timer-target="resetButton"
+                data-action="click->focus-timer#reset">
+                Reset
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Environment Control Section -->
+        <section class="environment-section" data-controller="environment">
+          <h2>Environment</h2>
+          <div class="environment-controls">
+            <button 
+              class="env-btn active" 
+              data-environment-target="environmentButton"
+              data-action="click->environment#switchEnvironment"
+              data-environment="minimal">
+              Minimal
+            </button>
+            
+            <button 
+              class="env-btn" 
+              data-environment-target="environmentButton"
+              data-action="click->environment#switchEnvironment"
+              data-environment="dark">
+              Dark
+            </button>
+            
+            <button 
+              class="env-btn" 
+              data-environment-target="environmentButton"
+              data-action="click->environment#switchEnvironment"
+              data-environment="nature">
+              Nature
+            </button>
+            
+            <button 
+              class="env-btn" 
+              data-environment-target="environmentButton"
+              data-action="click->environment#switchEnvironment"
+              data-environment="silent">
+              Silent
+            </button>
+          </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="settings-section">
+          <h2>Settings</h2>
+          <div class="settings-controls">
+            <button 
+              class="btn btn-outline"
+              data-action="click->focus-timer#requestNotificationPermission">
+              Enable Notifications
+            </button>
+            
+            <button 
+              class="btn btn-outline"
+              data-action="click->environment#requestScreenWakeLock">
+              Keep Screen Awake
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p>Built with Stimulus.js for zero-distraction focus</p>
+      </footer>
+    </div>
+
+    <!-- Stimulus Application -->
+    <script type="module" src="/src/stimulus/application.js"></script>
+    
+    <!-- Register Controllers -->
+    <script type="module">
+      import { application } from "/src/stimulus/application.js"
+      import FocusTimerController from "/src/stimulus/controllers/focus_timer_controller.js"
+      import EnvironmentController from "/src/stimulus/controllers/environment_controller.js"
+      
+      application.register("focus-timer", FocusTimerController)
+      application.register("environment", EnvironmentController)
+    </script>
   </body>
 </html> 

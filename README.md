@@ -1,6 +1,6 @@
 # Zero-Stimulus PWA
 
-A Progressive Web App for creating zero-stimulus environments to help you focus and be more productive.
+A Progressive Web App built with **Stimulus.js** for creating zero-stimulus environments to help you focus and be more productive.
 
 ## 🚀 Installation
 
@@ -36,11 +36,35 @@ npx create-react-app my-focus-app --template zero-stimulus-pwa
 
 ## 🎯 Features
 
-- **Focus Timer**: Customizable Pomodoro-style timer
+- **Focus Timer**: Customizable Pomodoro-style timer with Stimulus controllers
 - **Environment Control**: Manage your workspace for optimal focus
 - **PWA Ready**: Install as a native app on any device
 - **Offline Support**: Works without internet connection
 - **Zero Distractions**: Designed for maximum productivity
+- **Stimulus.js**: Lightweight, modern JavaScript framework
+
+## 🛠️ Technology Stack
+
+- **Stimulus.js**: Lightweight JavaScript framework for adding behavior to HTML
+- **Vite**: Fast build tool and development server
+- **PWA**: Progressive Web App capabilities
+- **CSS Custom Properties**: Dynamic theming and environment switching
+
+## 🎨 Architecture
+
+This app uses **Stimulus.js** controllers for clean, maintainable JavaScript:
+
+### Controllers
+
+- **FocusTimerController**: Handles timer functionality, progress tracking, and notifications
+- **EnvironmentController**: Manages environment switching and screen wake lock
+
+### Key Features
+
+- **Declarative HTML**: All behavior defined through data attributes
+- **Lightweight**: No virtual DOM, minimal JavaScript footprint
+- **Progressive Enhancement**: Works without JavaScript, enhanced with Stimulus
+- **Modular**: Each controller handles a specific concern
 
 ## 🛠️ Development
 
@@ -69,9 +93,29 @@ npm run serve
 
 The app includes several customizable components:
 
-- `FocusTimer`: Adjustable work/break intervals
-- `EnvironmentControl`: Manage your physical workspace
-- Theme and styling can be modified in `src/App.css`
+- **FocusTimer**: Adjustable work/break intervals with Stimulus values
+- **EnvironmentControl**: Manage your physical workspace with dynamic CSS
+- **Theme System**: CSS custom properties for easy theming
+
+### Adding New Controllers
+
+```javascript
+// Create a new controller
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = ["element"]
+  static values = { setting: String }
+  
+  connect() {
+    // Controller initialization
+  }
+  
+  action() {
+    // Controller action
+  }
+}
+```
 
 ## 📄 License
 
@@ -92,4 +136,4 @@ MIT License - see LICENSE file for details
 
 ---
 
-**Built with React, Vite, and ❤️ for productivity** 
+**Built with Stimulus.js, Vite, and ❤️ for productivity** 
