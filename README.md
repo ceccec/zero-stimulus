@@ -1,73 +1,95 @@
 # Zero-Stimulus PWA
 
-A Progressive Web App focused on creating environments and tools with minimal external stimuli for enhanced focus and productivity.
+A Progressive Web App for creating zero-stimulus environments to help you focus and be more productive.
 
-## About
+## 🚀 Installation
 
-This project explores the concept of zero-stimulus environments and their applications in learning, focus, and cognitive performance. The PWA provides a distraction-free environment with customizable settings for optimal concentration.
-
-## Features
-
-- **Focus Timer**: Pomodoro-style timer with minimal visual stimuli
-- **Environment Controls**: Switch between different stimulus environments
-  - Minimal: Pure white background
-  - Dark: Dark mode for eye comfort
-  - Nature: Subtle nature sounds (coming soon)
-  - Silent: Complete silence
-- **PWA Support**: Installable on any device
-- **Screen Wake Lock**: Prevents screen sleep during focus sessions
-- **Responsive Design**: Works on desktop, tablet, and mobile
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (version 16 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
 ```bash
+npm install zero-stimulus-pwa
+```
+
+## 📦 Usage
+
+### Quick Start
+
+```bash
+# Clone the repository
 git clone https://github.com/ceccec/zero-stimulus.git
 cd zero-stimulus
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start the development server:
-```bash
+# Start development server
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:3000`
-
-### Building for Production
+### Using the Published Package
 
 ```bash
-npm run build
+# Install globally
+npm install -g zero-stimulus-pwa
+
+# Or use as a template
+npx create-react-app my-focus-app --template zero-stimulus-pwa
 ```
 
-The built files will be in the `dist` directory, ready for deployment.
+## 🎯 Features
 
-## Usage
+- **Focus Timer**: Customizable Pomodoro-style timer
+- **Environment Control**: Manage your workspace for optimal focus
+- **PWA Ready**: Install as a native app on any device
+- **Offline Support**: Works without internet connection
+- **Zero Distractions**: Designed for maximum productivity
 
-1. **Start a Focus Session**: Click "Start Focus" to begin a 25-minute timer
-2. **Choose Environment**: Select your preferred stimulus environment
-3. **Stay Focused**: The app will prevent screen sleep and minimize distractions
-4. **Take Breaks**: Use the pause and reset functions as needed
+## 🛠️ Development
 
-## Contributing
+```bash
+# Development
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Serve production build
+npm run serve
+```
+
+## 📱 PWA Features
+
+- **Installable**: Add to home screen on mobile/desktop
+- **Offline First**: Works without internet connection
+- **Fast Loading**: Optimized with Vite build system
+- **Responsive**: Works on all device sizes
+
+## 🎨 Customization
+
+The app includes several customizable components:
+
+- `FocusTimer`: Adjustable work/break intervals
+- `EnvironmentControl`: Manage your physical workspace
+- Theme and styling can be modified in `src/App.css`
+
+## 📄 License
+
+MIT License - see LICENSE file for details
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-## License
+## 📞 Support
 
-This project is licensed under the MIT License. 
+- **GitHub**: https://github.com/ceccec/zero-stimulus
+- **NPM**: https://www.npmjs.com/package/zero-stimulus-pwa
+- **Issues**: https://github.com/ceccec/zero-stimulus/issues
+
+---
+
+**Built with React, Vite, and ❤️ for productivity** 
